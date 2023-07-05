@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <plaintext>
+
+
+
+        -----------------------------------------------------------------------------
+        ---------------------------------index---------------------------------------
+        -----------------------------------------------------------------------------
+        
+        
+        
+        
+        
+        <!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Website</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href='https://fonts.googleapis.com/css?family=Akaya Kanadaka' rel='stylesheet'>
+
+</head>
+<body>
+  <div class="containerindex">
+    <h1 class="text">Welcome to our Travel Website</h1>
+    <button class="button" onclick="location.href='registration.html'">Register</button>
+    <button class="button" onclick="location.href='login.html'">Login</button>
+  </div>
+</body>
+</html>
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------
+        ---------------------------------style css---------------------------------------
+        -----------------------------------------------------------------------------
+        
+        
+        
+        
+        body {
+            background-image: url('https://images.wallpaperscraft.com/image/single/silhouette_travel_hill_187424_3840x2400.jpg');
+            background-size: cover;
+            /*background-clip: content-box;*/
+            background-repeat: no-repeat;
+            /*background-position: center;*/
+            /*background-origin: content-box ;*/
+            /*padding: 50px;*/
+            /*font-family: 'Akaya Kanadaka';*/
+            background-attachment: fixed;
+        
+          }
+        
+          .containerindex {
+            text-align: center;
+            padding-top: 200px;
+          }
+          
+        
+          .container {
+              max-width: 500px;
+              margin: 60px auto;
+              padding: 20px;
+              background-color: #ffffff;
+              border-radius: 5px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+              overflow: hidden;
+              box-shadow: 7px 7px 10px #cbced1, -7px -7px 10px ;
+              border-radius: 20px;
+          }
+        
+          h2 {
+              text-align: center;
+          }
+        
+          form {
+              margin-bottom: 20px;
+          }
+        
+          label {
+              display: block;
+              margin-bottom: 5px;
+          }
+        
+          
+          input,
+          select,
+          textarea {
+              width: 100%;
+              padding: 10px;
+              border-radius: 3px;
+              border: 1px solid #ccc;
+              box-sizing: border-box;
+              margin-bottom: 10px;
+              border-radius: 20px;
+              box-shadow: 14px 14px 20px #cbced1;
+          }
+        
+          input[type="submit"] {
+              background-color: #4caf50;
+              color: #ffffff;
+              padding: 15px 30px;
+              border: none;
+              border-radius: 13px;
+              cursor: pointer;
+              box-shadow: 14px 14px 20px #cbced1;
+              
+          }
+          .submit-container {
+              text-align: center;
+          }
+        
+          #acknowledgment-screen {
+              display: none;
+              text-align: center;
+              padding: 20px;
+              background-color: #ffffff;
+              border-radius: 5px;
+              box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          }
+        
+          .success-message {
+              color: rgb(172, 244, 71);
+              margin-bottom: 10px;
+          }
+        
+          #acknowledgment-screen p {
+              margin-bottom: 5px;
+          }
+        
+          .button {
+            font-family: 'Akaya Kanadaka';
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 25px;
+            margin: 10px 20px;
+            width: 150px;
+          }
+          .text{
+             color: rgb(237, 237, 244);
+             font-family: 'Akaya Kanadaka';
+          }
+          #spanid{
+            color: #4caf50;
+            text-align:center;
+            text-size-adjust: 75px;
+          }
+          .statusclass
+          {
+            text-align: center;
+          }
+          table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #36f94d;
+        }
+        
+        /* Pagination styles */
+        .pagination {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .pagination a {
+            display: inline-block;
+            padding: 8px 16px;
+            text-decoration: none;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin: 0 4px;
+        }
+        
+        .pagination a.active {
+            background-color: #4CAF50;
+            color: white;
+            border: 1px solid #4CAF50;
+        }
+        
+        .pagination a:hover:not(.active) {
+            background-color: #ddd;
+        }
+
+
+
+
+
+
+
+        -----------------------------------------------------------------------------------
+        -------------------------------------------registration------------------------------
+        --------------------------------------------------------------------------------------
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        <!DOCTYPE html>
+<html>
+<head>
+    <title>Passenger Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Passenger Registration Form</h2>
+        <form id="registration-form" onsubmit="showAcknowledgment(); return false;">
+            <!--<label for="passenger-id">Passenger ID:</label>
+            <input type="text" id="passenger-id" readonly>-->
+
+            <label for="passenger-name">Passenger Name:</label>
+            <input type="text" id="passenger-name" maxlength="50" required>
+
+            <label for="email">Email:</label>
+            <input type="email" placeholder="Example@test.com" id="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" placeholder="Min 6 characters" id="password" maxlength="30" required>
+
+            <label for="address">Address:</label>
+            <textarea id="address" maxlength="100" required></textarea>
+
+            <label for="contact-number">Contact Number:</label>
+            <input type="tel" id="contact-number" pattern="[0-9]{10}" required>
+            <br><br>
+             <div class="submit-container">
+            <input type="submit" class="submit-container" value="Register">
+            </div>
+        </form>
+
+        <div id="acknowledgment-screen">
+            <h2 class="success-message">Passenger Registration Successful!</h2>
+            <p>Passenger ID: <span id="ack-passenger-id"></span></p>
+            <p>Passenger Name: <span id="ack-passenger-name"></span></p>
+            <p>Email: <span id="ack-email"></span></p>
+            <button class="button" onclick="location.href='login.html'">Login</button>
+
+        </div>
+    </div>
+
+    <script>
+        function showAcknowledgment() {
+            const passengerId = generatePassengerId();
+            const passengerName = document.getElementById('passenger-name').value;
+            const email = document.getElementById('email').value;
+
+            document.getElementById('ack-passenger-id').textContent = passengerId;
+            document.getElementById('ack-passenger-name').textContent = passengerName;
+            document.getElementById('ack-email').textContent = email;
+
+            document.getElementById('registration-form').reset();
+            document.getElementById('registration-form').style.display = 'none';
+            document.getElementById('acknowledgment-screen').style.display = 'block';
+        }
+
+        function generatePassengerId() {
+            return 'AUTO-' + Math.floor(10000 + Math.random() * 90000);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+-------------------------------------------------------------------------------------------
+------------------------------------booking list-----------------------------------------------
+--------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking List</title>
+    <link rel="stylesheet" href="styles.css">
+<body>
+    <div class="container">
+        <h2>Ticket Booking List</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>PNR NO</th>
+                    <th>Travel Date</th>
+                    <th>Source</th>
+                    <th>Destination</th>
+                    <th>Seat Preference</th>
+                    <th>Meal Preference</th>
+                </tr>
+            </thead>
+            <tbody id="booking-details">
+                <!-- Booking details will be dynamically inserted here -->
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            <a href="#" style="background-color:#36f94d;" id="prev-link">&lt; Prev</a>
+            <a href="#" style="background-color:#36f94d ;"id="next-link">Next &gt;</a>
+        </div>
+    </div>
+
+    <script>
+        // ... previous JavaScript code ...
+        const bookingDetails = [
+            { pnrNo: 'PNR-123456', travelDate: '2023-07-01', source: 'Airport A', destination: 'Airport X', seatPreference: 'Window', mealPreference: 'Veg' },
+            { pnrNo: 'PNR-789012', travelDate: '2023-07-02', source: 'Airport B', destination: 'Airport Y', seatPreference: 'Aisle', mealPreference: 'Non Veg' },
+            { pnrNo: 'PNR-345678', travelDate: '2023-07-03', source: 'Airport C', destination: 'Airport Z', seatPreference: 'Middle', mealPreference: 'Veg' },
+            { pnrNo: 'PNR-901234', travelDate: '2023-07-04', source: 'Airport D', destination: 'Airport W', seatPreference: 'Window', mealPreference: 'Non Veg' },
+            { pnrNo: 'PNR-567890', travelDate: '2023-07-05', source: 'Airport E', destination: 'Airport V', seatPreference: 'Aisle', mealPreference: 'Veg' },
+            { pnrNo: 'PNR-234567', travelDate: '2023-07-06', source: 'Airport F', destination: 'Airport U', seatPreference: 'Middle', mealPreference: 'Non Veg' },
+            { pnrNo: 'PNR-890123', travelDate: '2023-07-07', source: 'Airport G', destination: 'Airport T', seatPreference: 'Window', mealPreference: 'Veg' },
+            { pnrNo: 'PNR-456789', travelDate: '2023-07-08', source: 'Airport H', destination: 'Airport S', seatPreference: 'Aisle', mealPreference: 'Non Veg' }
+        ];
+
+        // Display booking details for a specific page
+        function displayBookingDetails(page) {
+            const pageSize = 5;
+            const startIndex = (page - 1) * pageSize;
+            const endIndex = startIndex + pageSize;
+            const bookingDetailsSlice = bookingDetails.slice(startIndex, endIndex);
+
+            const bookingDetailsTable = document.getElementById('booking-details');
+            bookingDetailsTable.innerHTML = '';
+
+            bookingDetailsSlice.forEach(booking => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${booking.pnrNo}</td>
+                    <td>${booking.travelDate}</td>
+                    <td>${booking.source}</td>
+                    <td>${booking.destination}</td>
+                    <td>${booking.seatPreference}</td>
+                    <td>${booking.mealPreference}</td>
+                `;
+                bookingDetailsTable.appendChild(row);
+            });
+        }
+
+        // Pagination event listeners
+        const prevLink = document.getElementById('prev-link');
+        const nextLink = document.getElementById('next-link');
+        let currentPage = 1;
+
+        prevLink.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayBookingDetails(currentPage);
+            }
+        });
+
+        nextLink.addEventListener('click', () => {
+            const totalPages = Math.ceil(bookingDetails.length / 5);
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayBookingDetails(currentPage);
+            }
+        });
+
+        // Display initial booking details
+        displayBookingDetails(currentPage);
+    </script>
+</body>
+</html>
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------
+---------------------------------book----------------------------------------------------
+-------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ticket Booking Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Ticket Booking Form</h2>
+        <form id="booking-form" onsubmit="showBookingAcknowledgment(); return false;">
+            <!--<label for="pnr-no">PNR No:</label>
+            <input type="text" id="pnr-no" readonly> -->
+
+            <label for="travel-date">Travel Date:</label>
+            <input type="date" id="travel-date" required>
+
+            <label for="source">Source Airport:</label>
+            <input type="text" id="source" required>
+
+            <label for="destination">Destination Airport:</label>
+            <input type="text" id="destination" required>
+
+            <label for="status">Status:</label>
+            <select id="status" required>
+                <option value="New">New</option>
+                <option value="Confirm">Confirm</option>
+                <option value="Hold">Hold</option>
+            </select>
+
+            <label for="seat-preference">Seat Preference:</label>
+            <select id="seat-preference">
+                <option value="Window">Window</option>
+                <option value="Middle">Middle</option>
+                <option value="Aisle">Aisle</option>
+            </select>
+
+            <label for="meal-preference">Meal Preference:</label>
+            <select id="meal-preference">
+                <option value="Veg">Veg</option>
+                <option value="Non Veg">Non Veg</option>
+            </select>
+            <br><br>
+        
+            <div class="submit-container">
+                <input type="submit" value="Book Ticket">
+            </div>
+        </form>
+
+        <div id="acknowledgment-screen">
+            <h2 class="success-message">Ticket Booked Successfully!</h2>
+            <p>PNR No: <span id="ack-pnr-no"></span></p>
+            <p>Travel Date: <span id="ack-travel-date"></span></p>
+            <p>Source Airport: <span id="ack-source"></span></p>
+            <p>Destination Airport: <span id="ack-destination"></span></p>
+            <button class="button" onclick="location.href='bookinglist.html'">Show list</button>
+        </div>
+    </div>
+
+    <script>
+        function showBookingAcknowledgment() {
+            const pnrNo = generatePNRNo();
+            const travelDate = document.getElementById('travel-date').value;
+            const source = document.getElementById('source').value;
+            const destination = document.getElementById('destination').value;
+
+            document.getElementById('ack-pnr-no').textContent = pnrNo;
+            document.getElementById('ack-travel-date').textContent = travelDate;
+            document.getElementById('ack-source').textContent = source;
+            document.getElementById('ack-destination').textContent = destination;
+
+            document.getElementById('booking-form').reset();
+            document.getElementById('booking-form').style.display = 'none';
+            document.getElementById('acknowledgment-screen').style.display = 'block';
+        }
+
+        function generatePNRNo() {
+            // Generate a random 6-digit PNR No
+            return 'PNR-' + Math.floor(100000 + Math.random() * 900000);
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------login------------------------------------
+-----------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" href="styles.css">
+        <link href='https://fonts.googleapis.com/css?family=Akaya Kanadaka' rel='stylesheet'>
+
+    </head>
+    <body>
+        <div class="container">
+            <h2>Passenger Login Form</h2>
+            <form id="login-form" onsubmit="show(); return false;">
+
+                <label for="passenger-name">Passenger Name:</label>
+                <input type="text" id="passenger-name" maxlength="50" required>
+
+                <label for="password">Password:</label>
+                <input type="password" placeholder="Min 6 characters" id="password" maxlength="30" required>
+
+                <br><br>
+                <div class="submit-container">
+                <input type="submit" class="submit-container" value="Login" onclick="location.href='book.html'">
+                </div>
+            </form>
+            <div class="statusclass">
+            <h4 id="spanid">Status Here</h4>
+            </div>
+        </div>
+
+    <script>
+        function show() {
+            document.getElementById("spanid").innerHTML="Success!!!";
+        }
+    </script>
+       
+    </body>
+</html>
+    </plaintext>
+</body>
+</html>
